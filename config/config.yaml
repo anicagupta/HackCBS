@@ -1,0 +1,26 @@
+﻿# TraceWeave — pipeline configuration
+# Every numeric/dir setting lives here; run_pipeline.py loads it via YAML.
+pipeline:
+  data_dir: "data"
+  sources_dir: "data/sources"
+  report_dir: "data/report"
+
+  top_k: 10
+  min_events_per_entity: 30
+  tol_minutes: 25
+  structuring_threshold: 10000.0
+  with_models: true
+
+  # seeds used by the synthetic generator when regenerating demo data
+  seeds: [42, 99]
+
+  # Stage-A content-probe thresholds (aml.schema_detect.ProbeConfig)
+  probe_date_parse_ratio: 0.9
+  probe_phone_ratio: 0.7
+  probe_numeric_ratio: 0.9
+  probe_id_ratio: 0.7
+  probe_amount_median_abs: 100.0
+  probe_amount_frac_ratio: 0.3
+  probe_amount_marker_ratio: 0.5
+  probe_big_code_magnitude: 10000.0
+  probe_amount_integer_median: 100.0
